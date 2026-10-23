@@ -8,7 +8,7 @@
   <!-- 웹 폰트 (Pretendard & Noto Serif KR) -->
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
@@ -245,10 +245,27 @@
       display: block;
       transition: transform 0.35s ease;
     }
-    /* 특정 인물 사진 위치 보정 */
-    .artist-img-wrapper img.focus-right {
-      object-position: 80% 20% !important;
+    
+    /* 인물별 세부 구도 중심점 보정 */
+    .artist-img-wrapper img.crop-director {
+      object-position: center 15% !important;
     }
+    .artist-img-wrapper img.crop-artist-04 {
+      object-position: 45% 30% !important;
+    }
+    .artist-img-wrapper img.crop-artist-05 {
+      object-position: center 25% !important;
+    }
+    .artist-img-wrapper img.crop-artist-06 {
+      object-position: center 20% !important;
+    }
+    .artist-img-wrapper img.crop-artist-08 {
+      object-position: center 15% !important;
+    }
+    .artist-img-wrapper img.crop-artist-10 {
+      object-position: center 15% !important;
+    }
+
     .artist-card:hover .artist-img-wrapper img {
       transform: scale(1.02);
     }
@@ -426,13 +443,13 @@
             <div class="artist-role">연구소장 · Pianist</div>
             <div class="artist-name serif">강우성</div>
             <ul class="artist-bio-list">
-              <li>서울예술고등학교 졸업</li>
-              <li>한국예술종합학교 음악원 및 동 대학원 졸업</li>
-              <li>독일 트로싱엔 국립음악대학 최고연주자과정(K.E.) 졸업</li>
-              <li>삼익 피아노 콩쿠르 대상, 칼 벡슈타인 대학콩쿠르 특별상</li>
-              <li>아스티 국제콩쿠르 우승, 페다라 국제콩쿠르 우승</li>
-              <li>KCO, 춘천시향, 원주시향, 부천시향, 몰도바 국립방송교향악단, KT 심포니 등 협연</li>
-              <li class="current-role">현) 국립강원대학교 문화예술공과대학 음악학과 교수, 부학장</li>
+              <li>서울예술고등학교 졸업[cite: 1]</li>
+              <li>한국예술종합학교 음악원 및 동 대학원 졸업[cite: 1]</li>
+              <li>독일 트로싱엔 국립음악대학 최고연주자과정(K.E.) 졸업[cite: 1]</li>
+              <li>삼익 피아노 콩쿠르 대상, 칼 벡슈타인 대학콩쿠르 특별상[cite: 1]</li>
+              <li>아스티 국제콩쿠르 우승, 페다라 국제콩쿠르 우승[cite: 1]</li>
+              <li>KCO, 춘천시향, 원주시향, 부천시향, 몰도바 국립방송교향악단, KT 심포니 등 협연[cite: 1]</li>
+              <li class="current-role">현) 국립강원대학교 문화예술공과대학 음악학과 교수, 부학장[cite: 1]</li>
             </ul>
           </div>
         </div>
@@ -446,13 +463,13 @@
             <div class="artist-role">Violinist</div>
             <div class="artist-name serif">이석중</div>
             <ul class="artist-bio-list">
-              <li>예원학교, 서울예고 수석입학, 줄리어드 예비학교</li>
-              <li>한국예술종합학교 예술사 및 독주자과정 졸업</li>
-              <li>미국 예일 대학교 석사(M.M) 및 최고연주자과정(A.D) 전액장학생 졸업</li>
-              <li>해외파견콩쿨 현악 전체대상(병역특례), 이화경향 등 입상</li>
-              <li>KBS교향악단, 국립심포니, 강남심포니 등 협연</li>
-              <li>아베끄 스트링 콰르텟 리더, 서울튜티·MEG앙상블 악장, TIMF앙상블 단원</li>
-              <li class="current-role">현) 국립강원대학교 문화예술공과대학 음악학과 교수</li>
+              <li>예원학교, 서울예고 수석입학, 줄리어드 예비학교[cite: 1]</li>
+              <li>한국예술종합학교 예술사 및 독주자과정 졸업[cite: 1]</li>
+              <li>미국 예일 대학교 석사(M.M) 및 최고연주자과정(A.D) 전액장학생 졸업[cite: 1]</li>
+              <li>해외파견콩쿨 현악 전체대상(병역특례), 이화경향 등 입상[cite: 1]</li>
+              <li>KBS교향악단, 국립심포니, 강남심포니 등 협연[cite: 1]</li>
+              <li>아베끄 스트링 콰르텟 리더, 서울튜티·MEG앙상블 악장, TIMF앙상블 단원[cite: 1]</li>
+              <li class="current-role">현) 국립강원대학교 문화예술공과대학 음악학과 교수[cite: 1]</li>
             </ul>
           </div>
         </div>
@@ -466,12 +483,12 @@
             <div class="artist-role">Flutist · Traversoist</div>
             <div class="artist-name serif">김정연</div>
             <ul class="artist-bio-list">
-              <li>강원대학교 사범대학 음악교육학 학사</li>
-              <li>미국 Southern Illinois University 석사 (M.M)</li>
-              <li>강원대학교 대학원 박사 (D.M.A)</li>
-              <li>춘천시향 상임단원, 서울오라토리오오케스트라 수석 역임</li>
-              <li>아시아플루트연맹(AFF) 국제콩쿠르 심사위원 역임</li>
-              <li class="current-role">현) 춘천국제고음악제 이사, 강원도음악협회 부회장, 강원대 평생교육원 출강</li>
+              <li>강원대학교 사범대학 음악교육학 학사[cite: 1]</li>
+              <li>미국 Southern Illinois University 석사 (M.M)[cite: 1]</li>
+              <li>강원대학교 대학원 박사 (D.M.A)[cite: 1]</li>
+              <li>춘천시향 상임단원, 서울오라토리오오케스트라 수석 역임[cite: 1]</li>
+              <li>아시아플루트연맹(AFF) 국제콩쿠르 심사위원 역임[cite: 1]</li>
+              <li class="current-role">현) 춘천국제고음악제 이사, 강원도음악협회 부회장, 강원대 평생교육원 출강[cite: 1]</li>
             </ul>
           </div>
         </div>
@@ -485,12 +502,12 @@
             <div class="artist-role">Violist · Baroque Violist</div>
             <div class="artist-name serif">허순구</div>
             <ul class="artist-bio-list">
-              <li>건국대학교 대학원 음악교육과 졸업</li>
-              <li>러시아 Moscow The Specialized Institute of Arts 전문연주자과정 (M.A)</li>
-              <li>강원대학교 공연예술학 박사 (Ph.D)</li>
-              <li>강원스트링오케스트라 지휘 및 음악감독</li>
-              <li>(사)하모니팝스오케스트라 악장, 춘천시古음악단 &lt;카메라타춘천&gt; 단원</li>
-              <li class="current-role">현) 춘천챔버뮤직소사이어티 대표, 춘천시음악협회 이사</li>
+              <li>건국대학교 대학원 음악교육과 졸업[cite: 2]</li>
+              <li>러시아 Moscow The Specialized Institute of Arts 전문연주자과정 (M.A)[cite: 2]</li>
+              <li>강원대학교 공연예술학 박사 (Ph.D)[cite: 2]</li>
+              <li>강원스트링오케스트라 지휘 및 음악감독[cite: 2]</li>
+              <li>(사)하모니팝스오케스트라 악장, 춘천시古음악단 &lt;카메라타춘천&gt; 단원[cite: 2]</li>
+              <li class="current-role">현) 춘천챔버뮤직소사이어티 대표, 춘천시음악협회 이사[cite: 2]</li>
             </ul>
           </div>
         </div>
@@ -498,157 +515,7 @@
         <!-- 04. 김성진 -->
         <div class="artist-card">
           <div class="artist-img-wrapper">
-            <img src="artist-04.jpg" alt="김성진 기타리스트">
+            <img src="artist-04.jpg" alt="김성진 기타리스트" class="crop-artist-04">
           </div>
           <div class="artist-info">
-            <div class="artist-role">Guitarist</div>
-            <div class="artist-name serif">김성진</div>
-            <ul class="artist-bio-list">
-              <li>서울예술고등학교 졸업</li>
-              <li>독일 국립뮌스터음대 전문연주자과정 졸업</li>
-              <li>독일 국립데트몰트음대 최고연주자과정(Konzertexamen) 졸업</li>
-              <li>대전일보 기타콩쿠르 1위, 라트비아 'CHAIN' 유럽 현대음악 콩쿠르 2위</li>
-              <li>독일 뮌스터 국립음대 예술조교 및 한국기타협회 부회장 역임</li>
-              <li class="current-role">현) GranGuitarEnsemble 단장, 가일플레이어즈 단장, 강원대 출강</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- 05. 전상영 (얼굴 중심 위치 보정 적용) -->
-        <div class="artist-card">
-          <div class="artist-img-wrapper">
-           <img src="artist-05.jpg?v=2" alt="전상영 음악감독" class="crop-artist-05">
-          </div>
-          <div class="artist-info">
-            <div class="artist-role">Music Director · Cembalist · Pianist</div>
-            <div class="artist-name serif">전상영</div>
-            <ul class="artist-bio-list">
-              <li>강원대학교 문화예술대학 음악학과 졸업</li>
-              <li>이탈리아 부르노 마데르나 국립음악원 디플로마 및 최고연주자과정 졸업</li>
-              <li>강원대학교 공연예술학 박사 (Ph.D)</li>
-              <li class="current-role">현) 강원음악연구소 예술감독, 강원대학교 음악학과 및 동대학원 출강</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- 06. 조용원 -->
-        <div class="artist-card">
-          <div class="artist-img-wrapper">
-           <img src="artist-06.jpg?v=2" alt="조용원 바리톤" class="crop-artist-06">
-          </div>
-          <div class="artist-info">
-            <div class="artist-role">Baritone</div>
-            <div class="artist-name serif">조용원</div>
-            <ul class="artist-bio-list">
-              <li>강원대학교 예술대학 음악학과 졸업</li>
-              <li>강원차세대 음악회 출연 및 비목콩쿨 가창상 수상</li>
-              <li>춘천시립교향악단, 춘천시민필하모닉 협연</li>
-              <li>화천소년소녀합창단, 춘천레이디스싱어즈, 춘천시청봄내합창단 지휘</li>
-              <li class="current-role">현) 춘천시립합창단 베이스 부수석, 함께자라기 사회적협동조합 이사장</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- 07. 이지혜 -->
-        <div class="artist-card">
-          <div class="artist-img-wrapper">
-            <img src="artist-07.jpg" alt="이지혜 소프라노">
-          </div>
-          <div class="artist-info">
-            <div class="artist-role">Soprano</div>
-            <div class="artist-name serif">이지혜</div>
-            <ul class="artist-bio-list">
-              <li>이화여자대학교 성악과 및 동 대학원 졸업</li>
-              <li>SC 음악콩쿠르 전체대상, 한국성악회콩쿠르 1위, 소리얼콩쿠르 1위</li>
-              <li>과천국제콩쿠르 3위, 수리음악콩쿠르 3위 등 유수 콩쿠르 석권</li>
-              <li>춘천시음협 송년음악회, 영산 영아티스트 콘서트 등 다수 출연</li>
-              <li class="current-role">현) 춘천시립합창단 단원 및 전문 연주자로 활동</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- 08. 이도영 -->
-        <div class="artist-card">
-          <div class="artist-img-wrapper">
-            <img src="artist-06.jpg?v=2" alt="이도영 바이올리니스트" class="crop-artist-08">
-          </div>
-          <div class="artist-info">
-            <div class="artist-role">Violinist · Conductor</div>
-            <div class="artist-name serif">이도영</div>
-            <ul class="artist-bio-list">
-              <li>강원대학교 문화예술대학 음악학과 졸업</li>
-              <li>독일 Trossingen 국립음대 석사(Master) 졸업</li>
-              <li>강원대학교 대학원 음악학과 박사과정 수료</li>
-              <li>이탈리아 Citta di Barletta 국제콩쿨 2위, 제12회 강원예술상 청년예술인상</li>
-              <li>클래식 앙상블 클랑(Klang) 음악감독, 트리오 쏘아베 바이올리니스트</li>
-              <li class="current-role">현) 설악 프라임 / 고성 필하모닉 지휘자, 속초시음악협회 부지부장</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- 09. 김재빈 -->
-        <div class="artist-card">
-          <div class="artist-img-wrapper">
-            <img src="artist-09.jpg" alt="김재빈 피아니스트">
-          </div>
-          <div class="artist-info">
-            <div class="artist-role">Pianist</div>
-            <div class="artist-name serif">김재빈</div>
-            <ul class="artist-bio-list">
-              <li>강원대학교 음악학과 피아노전공 졸업</li>
-              <li>폴란드 국립쇼팽음악대학교(UMFC) Performance Course 수료</li>
-              <li>양구청춘합창단·팔렬고등학교 등 합창 피아노 강사 역임</li>
-              <li>문화예술기업 (주)블랑클래식 대표</li>
-              <li class="current-role">현) 강원대학교 대학원 음악학 피아노전공 석사과정</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- 10. 김주영 -->
-        <div class="artist-card">
-          <div class="artist-img-wrapper">
-            <img src="artist-06.jpg?v=2" alt="김주영 사무국장" class="crop-artist-10">
-          </div>
-          <div class="artist-info">
-            <div class="artist-role">사무국장 · Pianist</div>
-            <div class="artist-name serif">김주영</div>
-            <ul class="artist-bio-list">
-              <li>중국 심양음악학원 피아노전공 졸업</li>
-              <li>강원대학교 대학원 음악학과 피아노전공 석사과정 졸업</li>
-              <li class="current-role">현) 강원음악연구소 사무국장, 강원대학교 대학원 박사과정 재학</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- 11. 윤아현 -->
-        <div class="artist-card">
-          <div class="artist-img-wrapper">
-            <img src="artist-11.jpg" alt="윤아현 총무">
-          </div>
-          <div class="artist-info">
-            <div class="artist-role">총무 · Pianist</div>
-            <div class="artist-name serif">윤아현</div>
-            <ul class="artist-bio-list">
-              <li>제6회 강원 음악 콩쿠르 2위</li>
-              <li>2023 모차르트 한국콩쿨 2위</li>
-              <li>2023 강원학생예술축전 1위</li>
-              <li>2025 중국 저장성 후저우시 한·중 교류음악회 출연</li>
-              <li class="current-role">현) 강원음악연구소 총무, 강원대학교 음악학과 3학년 재학</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- 푸터 -->
-  <footer>
-    <p><strong>강원음악연구소 (Gangwon Institute of Music)</strong></p>
-    <p>강원특별자치도 춘천시 강원대학길 1 (국립강원대학교) | contact@gangwonmusic.com</p>
-    <p style="margin-top: 1rem; color: #a1a1a6;">&copy; Gangwon Institute of Music. All rights reserved.</p>
-  </footer>
-
-</body>
-</html>
+            <div class="artist-
