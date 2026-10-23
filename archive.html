@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>공연 및 아카이브 | 강원음악연구소</title>
   
+  <!-- 웹 폰트 (Pretendard & Noto Serif KR) -->
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -34,6 +35,7 @@
 
     .serif { font-family: 'Noto Serif KR', serif; }
 
+    /* 헤더 */
     header {
       position: sticky;
       top: 0;
@@ -80,15 +82,18 @@
       font-weight: 500;
     }
 
+    /* 컨테이너 */
     .container {
       max-width: 1140px;
       margin: 0 auto;
       padding: 4rem 2rem 6rem;
     }
+
+    /* 페이지 인트로 */
     .page-header {
       padding: 4rem 0 3.5rem;
       border-bottom: 1px solid var(--border-subtle);
-      margin-bottom: 4rem;
+      margin-bottom: 4.5rem;
     }
     .page-label {
       font-size: 0.75rem;
@@ -108,75 +113,131 @@
     .page-desc {
       font-size: 1.05rem;
       color: var(--text-body);
-      max-width: 700px;
+      max-width: 740px;
       font-weight: 300;
+      line-height: 1.9;
     }
 
-    .archive-list {
+    /* 섹션 공통 */
+    .archive-section {
+      margin-bottom: 6rem;
+    }
+    .section-title-wrap {
+      margin-bottom: 2.5rem;
+      border-bottom: 2px solid var(--text-main);
+      padding-bottom: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .section-title {
+      font-size: 1.5rem;
+      color: var(--text-main);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+    }
+    .section-subtitle {
+      font-size: 0.85rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* MOU 아카이브 카드 */
+    .mou-list {
       display: flex;
       flex-direction: column;
-      gap: 4rem;
+      gap: 4.5rem;
     }
-    .archive-item {
+    .mou-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
-      display: grid;
-      grid-template-columns: 320px 1fr;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.02);
       overflow: hidden;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .archive-item:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
-    }
-    .archive-poster {
-      background-color: #f3f1ea;
-      aspect-ratio: 1 / 1.414;
+    .mou-img-container {
+      background-color: #f7f6f2;
+      padding: 2.5rem 2rem;
+      border-bottom: 1px solid var(--border-subtle);
       display: flex;
+      justify-content: center;
       align-items: center;
-      justify-content: center;
-      border-right: 1px solid var(--border-subtle);
-      padding: 1.5rem;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.88rem;
     }
-    .archive-content {
-      padding: 2.75rem 3rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    .mou-img-container img {
+      max-width: 100%;
+      height: auto;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      display: block;
+      border-radius: 2px;
     }
-    .concert-tag {
+    .mou-content {
+      padding: 2.5rem 3rem;
+    }
+    .mou-badge {
+      display: inline-block;
       font-size: 0.75rem;
       letter-spacing: 0.15em;
       color: var(--accent);
       text-transform: uppercase;
-      margin-bottom: 0.6rem;
-      font-weight: 500;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
     }
-    .concert-title {
-      font-size: 1.65rem;
+    .mou-title {
+      font-size: 1.55rem;
       color: var(--text-main);
       font-weight: 400;
-      margin-bottom: 1.25rem;
       line-height: 1.4;
+      margin-bottom: 1.25rem;
     }
-    .concert-meta {
+    .mou-meta {
       list-style: none;
-      font-size: 0.9rem;
-      color: #666;
+      font-size: 0.92rem;
+      color: var(--text-body);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 1.25rem 0;
       margin-bottom: 1.5rem;
-      padding-bottom: 1.25rem;
-      border-bottom: 1px dashed var(--border-subtle);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem 2.5rem;
     }
-    .concert-meta li { margin-bottom: 0.35rem; }
-    .concert-meta strong {
+    .mou-meta li strong {
       color: var(--text-main);
-      font-weight: 500;
-      margin-right: 0.5rem;
+      margin-right: 0.4rem;
+    }
+    .mou-details {
+      font-size: 0.9rem;
+      color: var(--text-body);
+      line-height: 1.8;
+      background: #faf8f5;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid var(--border-subtle);
+      border-radius: 4px;
+    }
+    .mou-details h4 {
+      font-size: 0.88rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    .mou-details ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .mou-details li {
+      position: relative;
+      padding-left: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+    .mou-details li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
     }
 
+    /* 푸터 */
     footer {
       border-top: 1px solid var(--border-subtle);
       background-color: var(--bg-surface);
@@ -187,10 +248,13 @@
     }
     footer p { margin-bottom: 0.4rem; }
 
-    @media (max-width: 860px) {
-      .archive-item { grid-template-columns: 1fr; }
-      .archive-poster { border-right: none; border-bottom: 1px solid var(--border-subtle); }
-      .archive-content { padding: 2rem 1.5rem; }
+    /* 모바일 반응형 */
+    @media (max-width: 768px) {
+      .container { padding: 3.5rem 1.25rem 5rem; }
+      .mou-content { padding: 1.75rem 1.25rem; }
+      .mou-img-container { padding: 1.5rem 0.75rem; }
+      .mou-meta { flex-direction: column; gap: 0.5rem; }
+
       header { padding: 1rem 1.25rem; }
       .header-inner { flex-direction: column; align-items: flex-start; gap: 0.85rem; }
       nav {
@@ -212,48 +276,98 @@
 </head>
 <body>
 
+  <!-- 헤더 -->
   <header>
     <div class="header-inner">
       <a href="index.html" class="brand-logo">
         <span class="title serif">강원음악연구소</span>
         <span class="eng">Gangwon Institute of Music</span>
       </a>
-     <nav>
+      <nav>
         <a href="index.html#about">연구소 소개</a>
         <a href="index.html#artists">아티스트</a>
         <a href="ieum.html">강원이음시리즈</a>
-        <a href="research.html">학술·교육</a>
+        <a href="research.html">학술·교육·교류</a>
         <a href="archive.html" class="active">공연 아카이브</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
+
+    <!-- 페이지 헤더 -->
     <div class="page-header">
-      <span class="page-label">Archive & Performances</span>
-      <h1 class="page-title serif">연주 실황 및 공연 아카이브</h1>
+      <span class="page-label">Archive & Partnerships</span>
+      <h1 class="page-title serif">대외협력 및 공연 아카이브</h1>
       <p class="page-desc">
-        강원음악연구소의 정기 공연, 대외 협력 및 연주 실황 기록입니다.
+        국내외 유수의 문화예술 단체와의 유기적인 업무협약(MOU) 및 학술·연주 교류를 통해 지역의 경계를 넘어 세계로 뻗어나가는 강원음악연구소의 공식 대외협력 기록입니다.
       </p>
     </div>
 
-    <div class="archive-list">
-      <!-- 추후 MOU 협약 및 공연 내용이 이곳에 추가됩니다 -->
-      <article class="archive-item">
-        <div class="archive-poster">
-          사진 및 포스터 등록 예정
-        </div>
-        <div class="archive-content">
-          <div class="concert-tag">Regular Archive</div>
-          <h2 class="concert-title serif">강원음악연구소 정기 공연 및 학술 아카이브</h2>
-          <ul class="concert-meta">
-            <li><strong>안내</strong> 연주 실황 및 협약 자료가 순차적으로 업데이트됩니다.</li>
-          </ul>
-        </div>
-      </article>
-    </div>
+    <!-- MOU & 협약 섹션 -->
+    <section class="archive-section">
+      <div class="section-title-wrap">
+        <h2 class="section-title serif">업무협약(MOU) 및 국제교류</h2>
+        <span class="section-subtitle">Official Partnerships</span>
+      </div>
+
+      <div class="mou-list">
+
+        <!-- 협약 1: 중국 호주시음악가협회 -->
+        <article class="mou-card">
+          <div class="mou-img-container">
+            <img src="mou-photo-01.jpg" alt="호주시음악가협회 상호협력 협약서 및 예술고문 위촉장">
+          </div>
+          <div class="mou-content">
+            <span class="mou-badge">International MOU 01</span>
+            <h3 class="mou-title serif">중국 호주시음악가협회(湖州市音乐家协会) 상호협력 협약 및 예술고문 위촉</h3>
+            <ul class="mou-meta">
+              <li><strong>협약기관</strong> 호주시음악가협회 (주석 양징 梁静) · 강원음악연구소 (소장 강우성)</li>
+              <li><strong>체결일자</strong> 2024년 6월 19일</li>
+              <li><strong>위촉내용</strong> 강우성 연구소장 호주시음악가협회 피아노전업위원회 예술고문 위촉 (2024.06 ~ 2028.04)</li>
+            </ul>
+            <div class="mou-details">
+              <h4>주요 협약 내용</h4>
+              <ul>
+                <li>음악적 학술 교류 및 공동 협력 체계 구축</li>
+                <li>양 기관의 역량 강화를 위한 학술적 연구 및 공연 활동 지원</li>
+                <li>신규 및 우수 프로그램 협력과 연구 성과 공유</li>
+                <li>음악 전문 인적 자원의 교류 및 연주 협력</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 협약 2: 심양시조선족음악무용가협회 -->
+        <article class="mou-card">
+          <div class="mou-img-container">
+            <img src="mou-photo-02.jpg" alt="심양시조선족음악무용가협회 상호협력 협약서">
+          </div>
+          <div class="mou-content">
+            <span class="mou-badge">International MOU 02</span>
+            <h3 class="mou-title serif">심양시조선족음악무용가협회(沈阳市朝鲜族音乐舞蹈家协会) 상호협력 협약</h3>
+            <ul class="mou-meta">
+              <li><strong>협약기관</strong> 심양시조선족음악무용가협회 (회장 김미지 金美池) · 강원음악연구소 (소장 강우성)</li>
+              <li><strong>협약성격</strong> 한·중 상호 우호증진 및 음악·예술 교류협력 협약 (국문 및 중문 협약서 동시 체결)</li>
+            </ul>
+            <div class="mou-details">
+              <h4>주요 협약 내용</h4>
+              <ul>
+                <li>음악·예술 학술 연구 및 학술적 영향력 강화를 위한 교류 협력</li>
+                <li>양 기관 주관 정기 연주회 및 학술 심포지엄의 연계 추진</li>
+                <li>최신 우수 프로젝트 공유 및 연구 성과의 공동 발전 도모</li>
+                <li>전문 연주자 및 차세대 음악 인재의 인적 자원 교류</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
   </main>
 
+  <!-- 푸터 -->
   <footer>
     <p><strong>강원음악연구소 (Gangwon Institute of Music)</strong></p>
     <p>강원특별자치도 춘천시 강원대학길 1 (국립강원대학교) | contact@gangwonmusic.com</p>
