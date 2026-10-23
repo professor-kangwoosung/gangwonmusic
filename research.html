@@ -1,1 +1,388 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>학술 및 교육 | 강원음악연구소</title>
+  
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+  <style>
+    :root {
+      --bg-base: #fbfbf9;
+      --bg-surface: #ffffff;
+      --border-subtle: #eae8e1;
+      --border-line: #dcd8ce;
+      --text-main: #1d1d1f;
+      --text-body: #4a4a4f;
+      --text-muted: #86868b;
+      --accent: #8c7355;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+      background-color: var(--bg-base);
+      color: var(--text-body);
+      line-height: 1.8;
+      letter-spacing: -0.015em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .serif { font-family: 'Noto Serif KR', serif; }
+
+    /* 헤더 */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(251, 251, 249, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-subtle);
+      z-index: 50;
+      padding: 1.25rem 2rem;
+    }
+    .header-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-logo {
+      text-decoration: none;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-logo .title {
+      font-size: 1.25rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+    .brand-logo .eng {
+      font-size: 0.72rem;
+      color: var(--accent);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-left: 2rem;
+      transition: color 0.2s ease;
+    }
+    nav a:hover, nav a.active {
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    /* 컨테이너 */
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+
+    /* 페이지 인트로 */
+    .page-header {
+      padding: 4rem 0 3.5rem;
+      border-bottom: 1px solid var(--border-subtle);
+      margin-bottom: 4.5rem;
+    }
+    .page-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      color: var(--accent);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .page-title {
+      font-size: clamp(2rem, 3.5vw, 2.7rem);
+      font-weight: 400;
+      color: var(--text-main);
+      line-height: 1.35;
+      margin-bottom: 1rem;
+    }
+    .page-desc {
+      font-size: 1.05rem;
+      color: var(--text-body);
+      max-width: 760px;
+      font-weight: 300;
+      line-height: 1.9;
+    }
+
+    /* 섹션 공통 */
+    .section-wrap {
+      margin-bottom: 5.5rem;
+    }
+    .section-title-wrap {
+      margin-bottom: 2.5rem;
+      border-bottom: 2px solid var(--text-main);
+      padding-bottom: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .section-title {
+      font-size: 1.5rem;
+      color: var(--text-main);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+    }
+    .section-subtitle {
+      font-size: 0.85rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* 리서치/아카이브 카드 */
+    .item-list {
+      display: flex;
+      flex-direction: column;
+      gap: 3.5rem;
+    }
+    .item-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      padding: 3rem;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.02);
+    }
+    .item-tag {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      display: inline-block;
+    }
+    .item-title {
+      font-size: 1.55rem;
+      color: var(--text-main);
+      font-weight: 400;
+      margin-bottom: 1.25rem;
+      line-height: 1.4;
+    }
+    .item-meta {
+      list-style: none;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 1rem 0;
+      margin-bottom: 1.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem 2.5rem;
+    }
+    .item-meta li strong {
+      color: var(--text-main);
+      margin-right: 0.4rem;
+    }
+
+    /* 갤러리 및 자료 영역 */
+    .item-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .item-img-wrap {
+      border: 1px solid var(--border-subtle);
+      background: #fbfbf9;
+      padding: 0.5rem;
+      border-radius: 2px;
+    }
+    .item-img-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* PDF 다운로드 바 */
+    .pdf-download-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f7f6f2;
+      border: 1px solid var(--border-subtle);
+      padding: 1rem 1.4rem;
+      border-radius: 4px;
+      margin-top: 1.5rem;
+    }
+    .pdf-info {
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+    .pdf-info span {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      color: #ffffff;
+      background-color: var(--accent);
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: opacity 0.2s ease;
+      white-space: nowrap;
+    }
+    .btn-download:hover { opacity: 0.9; }
+
+    /* 푸터 */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      background-color: var(--bg-surface);
+      padding: 4rem 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    footer p { margin-bottom: 0.4rem; }
+
+    /* 모바일 반응형 */
+    @media (max-width: 768px) {
+      .container { padding: 3.5rem 1.25rem 5rem; }
+      .item-card { padding: 2rem 1.25rem; }
+      .item-meta { flex-direction: column; gap: 0.5rem; }
+      .pdf-download-bar { flex-direction: column; align-items: flex-start; gap: 1rem; }
+
+      header { padding: 1rem 1.25rem; }
+      .header-inner { flex-direction: column; align-items: flex-start; gap: 0.85rem; }
+      nav {
+        display: flex !important;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 4px;
+        -webkit-overflow-scrolling: touch;
+      }
+      nav a {
+        margin-left: 0;
+        margin-right: 1.25rem;
+        font-size: 0.85rem;
+        flex-shrink: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 헤더 -->
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="title serif">강원음악연구소</span>
+        <span class="eng">Gangwon Institute of Music</span>
+      </a>
+      <nav>
+        <a href="index.html#about">연구소 소개</a>
+        <a href="index.html#artists">아티스트</a>
+        <a href="ieum.html">강원이음시리즈</a>
+        <a href="research.html" class="active">학술·교육</a>
+        <a href="archive.html">공연 아카이브</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- 페이지 헤더 -->
+    <div class="page-header">
+      <span class="page-label">Research & Education</span>
+      <h1 class="page-title serif">학술 연구 및 교육</h1>
+      <p class="page-desc">
+        서양 고전 음악의 문헌적 고증과 학술 심포지엄, 차세대 전문 음악인을 위한 마스터클래스 등 강원음악연구소의 지속적인 연구 및 교육 성과를 기록합니다.
+      </p>
+    </div>
+
+    <!-- 1. 학술 연구 & 세미나 -->
+    <section class="section-wrap">
+      <div class="section-title-wrap">
+        <h2 class="section-title serif">학술 세미나 및 연구 자료</h2>
+        <span class="section-subtitle">Academic Research</span>
+      </div>
+
+      <div class="item-list">
+
+        <!-- 학술 자료 예시 카드 01 -->
+        <article class="item-card">
+          <span class="item-tag">Academic Research 01</span>
+          <h3 class="item-title serif">학술 세미나 및 연구 발표 자료</h3>
+          <ul class="item-meta">
+            <li><strong>주제</strong> 고음악 문헌 연구 및 연주 실천</li>
+            <li><strong>발표/주최</strong> 강원음악연구소</li>
+          </ul>
+          <p style="font-size: 0.95rem; color: var(--text-body); margin-bottom: 1.5rem; word-break: keep-all;">
+            세미나 내용 요약 및 주요 연구 개요가 들어가는 자리입니다.
+          </p>
+
+          <!-- PDF 다운로드/열람 버튼 영역 -->
+          <div class="pdf-download-bar">
+            <div class="pdf-info">
+              📄 <strong>학술 연구 자료집 원본 (PDF)</strong>
+              <span>PDF 문서를 내려받거나 새 창에서 직접 열람하실 수 있습니다.</span>
+            </div>
+            <a href="research-doc-01.pdf" target="_blank" class="btn-download">PDF 자료 보기 / 다운로드</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 2. 교육 & 마스터클래스 -->
+    <section class="section-wrap">
+      <div class="section-title-wrap">
+        <h2 class="section-title serif">마스터클래스 및 교육 현장</h2>
+        <span class="section-subtitle">Masterclass & Education</span>
+      </div>
+
+      <div class="item-list">
+
+        <!-- 마스터클래스 예시 카드 01 -->
+        <article class="item-card">
+          <span class="item-tag">Masterclass & Workshop</span>
+          <h3 class="item-title serif">차세대 연주자를 위한 전문 마스터클래스</h3>
+          <ul class="item-meta">
+            <li><strong>강사진</strong> 강우성 연구소장 및 초청 교수진</li>
+            <li><strong>대상</strong> 음악대학 및 대학원 전공생</li>
+          </ul>
+
+          <!-- 교육 현장 사진 갤러리 -->
+          <div class="item-gallery">
+            <div class="item-img-wrap">
+              <img src="research-photo-01.jpg" alt="마스터클래스 현장 사진 1">
+            </div>
+            <div class="item-img-wrap">
+              <img src="research-photo-02.jpg" alt="마스터클래스 현장 사진 2">
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 푸터 -->
+  <footer>
+    <p><strong>강원음악연구소 (Gangwon Institute of Music)</strong></p>
+    <p>강원특별자치도 춘천시 강원대학길 1 (국립강원대학교) | contact@gangwonmusic.com</p>
+    <p style="margin-top: 1rem; color: #a1a1a6;">&copy; Gangwon Institute of Music. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
